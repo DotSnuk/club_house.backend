@@ -5,7 +5,13 @@ const cors = require('cors');
 const corsOptions = {
   origin: ['http://localhost:5173'],
 };
-require('dotenv').config();
+if (process.env.NODE_ENV === 'production') {
+  require('dotenv').config({ path: '.env.production' });
+} else {
+  require('dotenv').config({ path: '.env.development' });
+}
+console.log(process.env.TEMP_STRING);
+
 const session = require('express-session');
 const passport = require('passport');
 
