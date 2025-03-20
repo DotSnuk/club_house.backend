@@ -10,8 +10,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   require('dotenv').config({ path: '.env.development' });
 }
-console.log(process.env.TEMP_STRING);
-
 const session = require('express-session');
 const passport = require('passport');
 
