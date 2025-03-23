@@ -46,10 +46,11 @@ INSERT INTO forum (title) SELECT 'General'
 
 async function main() {
   console.log('seeding');
-  console.log(process.env.DB_HOST);
+
   const client = new Client({
-    connectionString: `postgresql://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+    connectionString: process.env.DB_DEPLOY_URL,
   });
+
   try {
     await client.connect();
     console.log('connected');
