@@ -24,5 +24,5 @@ require('./passport')(passport);
 
 app.use('/', router);
 
-const PORT = 3000;
+const PORT = 10000;
 app.listen(PORT, () => console.log(`app listening in on port ${PORT}`));
